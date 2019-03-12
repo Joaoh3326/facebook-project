@@ -1,10 +1,24 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component, Fragment } from 'react';
+import { render } from 'react-dom';
+
+import Header from './Header';
+import Post from './Post';
+
+import './style.scss';
 
 class App extends Component {
   render() {
-    return <div>TESTE</div>;
+    return (
+      <Fragment>
+        <Header />
+        <div className="wrapper">
+          <div className="content">
+            <Post />
+          </div>
+        </div>
+      </Fragment>
+    );
   }
 }
 
-render(document.getElementById("app"), <App />);
+render(<App />, document.getElementById('app'));
